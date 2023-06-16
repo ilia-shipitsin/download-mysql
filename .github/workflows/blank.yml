@@ -25,10 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
@@ -49,5 +45,6 @@ jobs:
                "sec-ch-ua"="`"Not.A/Brand`";v=`"8`", `"Chromium`";v=`"114`", `"Microsoft Edge`";v=`"114`""
                "sec-ch-ua-mobile"="?0"
                "sec-ch-ua-platform"="`"Windows`""
-          }
+          } -OutFile 'mysql-8.0.33-winx64.zip'
+          Get-Item 'mysql-8.0.33-winx64.zip'
         shell: powershell
